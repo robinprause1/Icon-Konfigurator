@@ -1,0 +1,22 @@
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row flex-md-column justify-content-center align-items-center my-3">
+    <button (click)="createRandomIcon()" type="button" class="btn btn-primary mb-md-3 m-1">
+      Zufälliges Icon
+    </button>
+    <input (input)="search()" [(ngModel)]="searchInput" class="form-control ms-2 w-50 w-md-25 align-self-center rounded-3" type="text" name="search_favorites" id="search_favorites" placeholder="suchen..." />
+  </div>
+  <div class="edit-card glass-dark rounded-4 bottom-0 justify-content-center p-2">
+    <!--TODO <transition-group name="icon-enter-anim">-->
+      <div *ngFor="let icon of this.filteredIcons"
+           class="shadow-anim py-2 py-sm-2 px-3 rounded-3 bg-white m-2 button-hover"
+           (click)="saveIcon(icon)">
+        <i class="material-symbols-rounded selectable align-self-center justify-content-center" [id]="icon">{{icon}}</i>
+      </div>
+    <!--TODO </transition-group>-->
+  </div>
+  <div class="col-12">
+    <div class="alert alert-danger text-center m-2 p-1" *ngIf="this.msg != '' && this.selectedIcon == ''">
+      {{ this.msg }}
+    </div>
+  </div>
+</div>

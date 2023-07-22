@@ -1,0 +1,78 @@
+.material-symbols-rounded{
+  cursor: pointer;
+}
+.bg-image {
+  background-image: url("../../../assets/img/bg.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
+}
+
+.glass{
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px) brightness(0.9);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  min-height: 85%;
+  max-height: 85%;
+}
+
+.bg-white-50{
+  background-color: rgba(255,255,255,0.5)!important;
+}
+
+.button-hover{
+  cursor: pointer;
+}
+
+.h-fit-content{
+  height: fit-content;
+}
+
+/* FORWARD ANIMATIONS */
+.card-anim-forward-enter-from{
+  transform: translateX(100%);
+}
+.card-anim-forward-enter-active{
+  transition: .5s ease-in-out;
+}
+.card-anim-forward-enter-to{
+  transform: translateX(0);
+}
+
+.card-anim-forward-leave-from{
+  transform: translateX(0);
+}
+.card-anim-forward-leave-active{
+  transition: .5s ease-in-out;
+}
+.card-anim-forward-leave-to{
+  transform: translateX(-100%);
+}
+
+/* BACKWARD ANIMATIONS */
+.card-anim-backward-enter-from{
+  transform: translateX(-100%);
+}
+.card-anim-backward-enter-active{
+  transition: .5s ease-in-out;
+}
+.card-anim-backward-enter-to{
+  transform: translateX(0);
+}
+
+.card-anim-backward-leave-from{
+  transform: translateX(0);
+}
+.card-anim-backward-leave-active{
+  transition: .5s ease-in-out;
+}
+.card-anim-backward-leave-to{
+  transform: translateX(100%);
+}
+
+.z-index-1000{
+  z-index: 1000;
+}

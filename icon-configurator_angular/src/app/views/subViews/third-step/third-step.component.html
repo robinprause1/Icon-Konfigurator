@@ -1,0 +1,6 @@
+<div class="d-flex rounded-4 w-100 h-20 d-flex flex-row justify-content-around glass-dark p-4">
+  <div class="d-flex">
+    <label for="colorpicker" class="pe-4 form-label text-white m-0">Farbe:</label>
+    <input type="color" id="colorpicker" [value]="color"  [(ngModel)]="color" (input)="setColor()" >
+  </div>
+</div>

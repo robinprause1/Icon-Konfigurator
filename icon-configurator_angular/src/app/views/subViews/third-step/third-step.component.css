@@ -1,0 +1,6 @@
+.glass-dark {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(20, 20, 20, 0.3);
+  backdrop-filter: blur(10px) brightness(0.9);
+  border-radius: 1rem;
+}

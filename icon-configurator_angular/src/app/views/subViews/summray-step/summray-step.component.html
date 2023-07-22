@@ -1,0 +1,13 @@
+<div class="alert alert-danger mx-2" *ngIf="this.errorMsg">{{ this.errorMsg }}</div>
+<div class="alert alert-success mx-2" *ngIf="this.serverConfirm">{{ this.serverConfirm }}</div>
+<div class="row flex-md-row flex-column justify-content-center align-items-center">
+  <a (click)="saveToFavorites()" ref="favoriteBtn" *ngIf="!editMode" class="col-6 m-1 d-flex justify-content-center text-white text-decoration-none">
+    <button type="button" class="btn btn-success align-self-center">als Favorit speichern</button>
+  </a>
+  <a (click)="patchFavorite()" ref="favoriteBtn" *ngIf="editMode" class="col-6 m-1 d-flex justify-content-center text-white text-decoration-none flex-column">
+    <button type="button" class="btn btn-success align-self-center" *ngIf="editMode">Änderungen speichern</button>
+  </a>
+  <a (click)="downloadIcon()" ref="downloadBtn" id="downloadBtn" class="col-6 m-1 d-flex justify-content-center text-white text-decoration-none">
+    <button type="button" class="btn btn-secondary align-self-center">Download</button>
+  </a>
+</div>

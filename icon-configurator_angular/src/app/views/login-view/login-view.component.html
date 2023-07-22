@@ -1,0 +1,50 @@
+<div>
+  <div (click)="onLibraryAdd()" class="d-flex row button-pointer z-index-1000 bg-primary rounded-4 ms-2 mt-2 shadow position-absolute px-2 text-white align-items-center">
+    <i class="material-symbols-rounded display-4 w-auto">library_add</i> <!--this.$router.push('/')-->
+    <div class="w-auto">zum Konfigurator</div>
+  </div>
+  <div class="vh-100 bg-image d-flex vw-100 align-items-center justify-content-center">
+    <div class="col-12 col-md-8 p-3 position-absolute card border-0 shadow p-2 rounded-4">
+      <div class="alert alert-success" role="alert" *ngIf="serverConfirm().length != 0">
+        {{ serverConfirm() }}
+      </div>
+      <div class="row m-0 align-items-center">
+        <div class="col-12 col-md-4 bg-primary rounded-3 ms-0 row">
+          <img src="../../../assets/img/login_background.png" class="p-2 col-6 col-md-12 p-4 ratio-1x1 px-0 px-sm-4 p-md-2" alt="background image"/>
+          <p class="text-white pt-2 col-6 col-md-12 align-self-center">Logge dich ein um bereits erstellt Icons wiederzufinden und Favoriten zu speichern</p>
+        </div>
+        <div class="col-12 col-md-8 pe-0 ps-0 ps-md-4">
+          <h1 class="pt-2">Icon Konfigurator</h1>
+          <h3 class="pb-2 text-grey">Einloggen</h3>
+          <form (ngSubmit)="handleLogin()">
+            <div class="mb-3">
+              <label class="form-label" for="username">Nutzername</label>
+              <input class="form-control shadow-none" id="username" type="text" placeholder="Nutzername" name="username" [(ngModel)]="user.username"
+                     required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-control shadow-none" id="password" type="password" placeholder="Passwort" name="password" [(ngModel)]="user.password"
+                     required/>
+            </div>
+            <div class="d-flex justify-content-end align-content-center">
+              <a
+                routerLink="/register"
+                class="text-decoration-none text-center align-self-center me-4"
+              >
+                Jetzt registrieren
+              </a>
+              <button class="btn btn-primary btn-lg" id="loginButton" type="submit">Einloggen</button>
+            </div>
+          </form>
+          <div class="alert alert-danger mt-2" role="alert" *ngIf="serverError">
+            {{ serverError }}
+          </div>
+          <div class="alert alert-danger mt-2" role="alert" *ngIf="errorMsg().length != 0">
+            {{ errorMsg() }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

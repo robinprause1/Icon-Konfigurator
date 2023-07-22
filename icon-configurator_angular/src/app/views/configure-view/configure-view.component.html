@@ -1,0 +1,49 @@
+<div>
+
+  <a [routerLink]="loggedIn()? '/profile' : '/login'">
+    <div class="d-flex row button-pointer z-index-1000 bg-primary rounded-4 ms-2 mt-2 shadow position-absolute px-2 text-white align-items-center">
+      <i class="material-symbols-rounded display-4 w-auto">person</i> <!--this.$router.push('/')-->
+      <div class="w-auto">zum Profil</div>
+    </div>  </a>
+  <div class="vh-100 bg-image d-flex flex-column vw-100 align-items-center justify-content-start">
+
+    <div [accessKey]="this.currentStep()" class="d-flex align-items-center justify-content-center flex-grow-1 w-100">
+      <div class="d-flex flex-column col-12 col-md-9 glass shadow rounded-4 p-1 mx-md-4 p-md-4">
+        <div class="d-flex flex-column flex-grow-1">
+          <h1 class="text-center text-white align-items-center py-1">{{ heading() }}</h1>
+          <div class="d-flex justify-content-center">
+            <app-icon-store *ngIf="this.currentStep() >= 1" class="align-self-center"></app-icon-store>
+          </div>
+
+
+          <app-first-step *ngIf="this.currentStep() == 0" [msg]="this.chooseIconMsg"></app-first-step>
+          <app-second-step *ngIf="this.currentStep() == 1"></app-second-step>
+          <app-third-step *ngIf="this.currentStep() == 2" [showColorPicker]="true"></app-third-step>
+          <app-summray-step *ngIf="this.currentStep() == 3"></app-summray-step>
+
+          <!--
+          <first-step v-if="(this.currentStep == 0)" msg="this.chooseIconMsg"></first-step>
+          <second-step v-if="(this.currentStep == 1)"></second-step>
+          <third-step v-if="(this.currentStep == 2)" :showColorPicker="this.showColorPicker"></third-step>
+          <zusammenfassung-step v-if="(this.currentStep == 3)"></zusammenfassung-step>
+-->
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="flex-row d-flex flex-wrap rounded-pill card border-0 mt-2 mt-md-4 bg-white-50">
+            <div (click)="previousStep()" class="button-hover d-flex p-2">
+              <i [ngClass]="'material-symbols-rounded text-white bg-primary rounded-4 p-1 fw-bold ' + (this.currentStep() === 0 ? 'opacity-25' : 'opacity-100')">arrow_back_ios_new</i>
+            </div>
+            <div (click)="nextStep()" class="d-flex p-2">
+              <div class="button-hover d-flex">
+                <i class="material-symbols-rounded text-white bg-primary rounded-4 p-1 fw-bold" *ngIf="(this.currentStep() <= 2)">arrow_forward_ios</i>
+              </div>
+              <button class="btn btn-primary rounded-pill p-1 ps-2 pe-2" *ngIf="((this.currentStep() == 3))" (click)="finishConfig()">
+                neues Icon
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

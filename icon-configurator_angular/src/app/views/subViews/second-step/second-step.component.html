@@ -1,0 +1,11 @@
+<div class="edit-card glass-dark rounded-4 d-flex flex-md-row flex-column">
+  <div class="col form-check form-switch d-flex align-items-center mb-0 justify-content-center">
+    <input class="form-check-input switchBtn" type="checkbox" role="switch" id="outlineSwitch" (click)="setFill()"
+           [(ngModel)]="fillBool">
+    <label class="form-check-label text-white" for="outlineSwitch">Fill</label>
+  </div>
+  <div class="col d-flex align-items-center justify-content-center">
+    <input type="range" class="form-range ps-1 pe-1" min="100" max="700" step="100" id="weightRange" (change)="setWeight()" [(ngModel)]="weightModel">
+    <label for="weightRange" class="form-label text-white ps-4 mb-0 flex-nowrap">Weight: {{weightModel}}</label>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="d-flex flex-column">
+  <div class="form-check form-switch d-flex align-items-center align-self-center my-3">
+    <input class="form-check-input switchBtn" type="checkbox" role="switch" id="outlineSwitch"
+           [(ngModel)]="deleteIcons">
+    <label class="form-check-label ms-2" for="outlineSwitch">Icons löschen</label>
+  </div>
+  <div class="row gy-4 m-0">
+    <div *ngFor="let icon of this.icons; let i = index" class="col-3 col-md-2">
+      <app-icon-props (iconRemoved)="removeDeletedIcon()" [deleteIcons]="this.deleteIcons" [refId]="'icon_'+i + '_' + api_url.substring(3)"
+                      [editIdx]="i" [editFavorites]="this.api_url == 'getFavorites'" [icon]="icon.icon"
+                      [fill]="icon.fill" [color]="icon.color" [weight]="+icon.weight"></app-icon-props>
+    </div>
+    <p *ngIf="this.icons == ''">Schnell!!! Erstelle dein erstes Icon... :D</p>
+  </div>
+</div>

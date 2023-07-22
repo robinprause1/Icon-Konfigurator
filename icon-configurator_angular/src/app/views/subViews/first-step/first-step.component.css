@@ -1,0 +1,60 @@
+.icon-size {
+  width: 1em;
+  height: 1rem;
+}
+
+.shadow-anim {
+  border: white 4px solid;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  height: fit-content;
+}
+
+.shadow-anim:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition-duration: 500ms;
+  border-radius: 40px;
+}
+
+.edit-card {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto !important;
+}
+@media screen and (max-width: 768px) {
+  .edit-card {
+    max-height: 50vh;
+  }
+}
+
+.button-hover {
+  cursor: pointer;
+}
+
+.glass-dark {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(20, 20, 20, 0.3);
+  backdrop-filter: blur(10px) brightness(0.9);
+  border-radius: 1rem;
+}
+
+.material-symbols-rounded .selectable{
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+
+  line-height: 1.5;
+}
+
+.icon-enter-anim-enter-from{
+  transform: scale(0);
+}
+.icon-enter-anim-enter-active{
+  transition: 1s ease-in-out;
+}
+.icon-enter-anim-enter-to{
+  transform: scale(1);
+}

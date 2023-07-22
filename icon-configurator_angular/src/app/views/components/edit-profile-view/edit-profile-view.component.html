@@ -1,0 +1,51 @@
+<div class="container px-md-4 px-1">
+  <form (ngSubmit)="edit()" class="editProfile">
+    <h3>Nutzerdaten anpassen</h3>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="name">Nachname</label>
+        <input id="name" class="form-control shadow-none" type="text" placeholder="Nachname" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="prename">Vorname</label>
+        <input id="prename" class="form-control shadow-none" type="text" placeholder="Vorname" [(ngModel)]="prename" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="username">Nutzername</label>
+        <input id="username" class="form-control shadow-none" type="text" placeholder="Nutzername" [ngModel]="username" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="oldpw">Altes Passwort</label>
+        <input id="oldpw"  class="form-control shadow-none" type="password" placeholder="altes Passwort" [(ngModel)]="oldpw" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="newpw">Neues Passwort</label>
+        <input id="newpw" class="form-control shadow-none" type="password" placeholder="neues Passwort" [(ngModel)]="newpw" [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label mb-0" for="newpwrp">Neues Passwort wiederholen</label>
+        <input id="newpwrp" class="form-control shadow-none" type="password" placeholder="neues Passwort wiederholen" [(ngModel)]="newpwrp" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+    <div class="alert alert-danger mt-2" role="alert" *ngIf="serverError">
+      {{serverError}}
+    </div>
+    <div class="row gy-2">
+      <div class="col-12 col-md-6">
+        <button class="btn btn-success btn-md" id="saveButton" *ngIf="!confirm" type="submit">Speichern & Startseite</button>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <button class="btn btn-danger btn-md" id="submitButton" type="button" (click)="(this.confirm = true)" *ngIf="!this.confirm">Account Löschen</button>
+        <p *ngIf="confirm" class=" mt-1 h4">Bist du sicher?</p>
+        <button class="btn btn-success col-3 btn-md mb-2" *ngIf="confirm" (click)="deleteUser()">Ja</button>
+        <button class="btn btn-danger col-3 btn-md mb-2" *ngIf="confirm" (click)="(this.confirm = false)">Nein</button>
+      </div>
+    </div>
+  </form>
+</div>

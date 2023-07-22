@@ -1,0 +1,18 @@
+.bg-image {
+  background-image: url("../../../assets/img/bg.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.material-symbols-rounded {
+  cursor: pointer;
+}
+
+.tab-content {
+  height: 65vh;
+}
+
+.z-index-1000{
+  z-index: 1000;
+}

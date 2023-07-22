@@ -1,0 +1,7 @@
+<div class="d-flex justify-content-center position-relative">
+  <i class="material-symbols-rounded fs-1" [id]="refId"
+     [style]="'font-variation-settings: \'FILL\' ' + fill + ',\'wght\' ' + weight + ', \'GRAD\' 0, \'opsz\' 48; color: ' + color">{{
+    icon
+    }}</i>
+  <i (click)="changeOrDeleteIcon()" [id]="refId+'overlay'" [class]="'material-symbols-rounded top-0 editIcon position-absolute fs-1 '+ (this.deleteIcons ? 'text-danger' : '')">{{ overlayIcon() }}</i>
+</div>
